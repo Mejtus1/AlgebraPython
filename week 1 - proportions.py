@@ -38,4 +38,60 @@ if n2==0:
 if d2==0:
     answer = d1 * n2 / n1
     print("d2 = ", answer) # n2 = 8.0 
-# 21:28 
+
+# Extra problems (working with proportions and ratios)
+#   2      4
+# 1 -- + 3 -- - 7 
+#   3      5
+# python knows order of operations so we can write it like this 
+print(1+2/3+3+4/5-7) 
+# or it can be stored as a variable and used later
+c = (1+2/3+3+4/5-7) 
+
+# if the c is 0.444444444 never ending 
+# - all never ending numbers can be mitigated and changed to fractions and ratios 
+# ccc = 0.44444444
+# 10ccc = 4.44444
+# 9ccc = 4 
+# ccc = 4/9
+
+# algebra acrobatics (how .9999 repeating equals 1)
+# ff = 0.99999999
+# 10ff = 9.9999999
+# 10ff = 9 (10 - 0.999999 = 9.9999 - 0.99999)
+# 9ff = 9
+# ff = 1
+
+# Exchange CAD and USD 
+#  1 USD     1 USD          q1   w1
+# -------- = -------        -- = --
+# 1.29 CAD   1.29 CAD       q2   w2
+q1 = 1
+q2 = 1.29
+w1 = 50
+w2 = 0 
+# 0 means unknown value 
+if w1==0:
+    answer = q1 * w2 / q2
+    print("USD value = ", answer) 
+
+if w2==0:
+    answer = q2 * w1 / q1
+    print("CAD value = ", answer) #64.5 CAD
+
+# Miles and km converter 
+# 1 mile     1 mile          rt1   cv1
+# ------- = --------         --- = ---
+# 1.6 km     1.6 km          rt2   cv2
+rt1 = 1
+rt2 = 1.6
+cv1 = 50
+cv2 = 0
+# 0 means unknown value 
+if cv1==0:
+    answr = rt1 * cv2 / rt2
+    print(answr)
+
+if cv2==0:
+    answr = cv1 * rt2 / rt1
+    print(answr) # 80.0 
