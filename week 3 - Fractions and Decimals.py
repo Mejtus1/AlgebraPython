@@ -82,4 +82,106 @@ print("The percent is", percent, " %")
 # fraction is 2 / 10 
 # percent is 20.0 % 
 
-# 
+###########################
+# Simplest solve-for-x code
+import sympy 
+from sympy import symbols 
+from sympy.solvers import solve 
+
+x = symbols('x') 
+
+# Put the equation here
+eq = 2*x**2 - 4
+
+solve(eq,x)
+# [-sqrt(2), sqrt(2)]
+
+######################################################
+# Prompt for someone to enter the equation, then solve
+import sympy
+from sympy import symbols
+from sympy.solvers import solve
+
+x = symbols('x')
+eq = input('Enter equation: 0 = ')
+
+print("x = ", solve(eq,x))
+
+# Enter equation: 0 = 3*x-6
+x#  =  [2]
+
+##############################
+# Doing more with the solution
+import sympy 
+from sympy import symbols 
+from sympy.solvers import solve 
+
+x = symbols('x') 
+
+# Put the equation here
+eq = 2*x - 4
+
+solution = solve(eq,x)
+print("x = ", solution[0])
+# x =  2
+
+##################
+# Multiple answers
+import sympy 
+from sympy import symbols 
+from sympy.solvers import solve 
+
+x = symbols('x') 
+
+eq = input('Enter equation: 0 = ')
+
+solution = solve(eq,x)
+for s in solution:
+    print("x = ", s)
+
+# Enter equation: 0 = (x-1)*(x+2)*(x-3)
+# x =  -2
+# x =  1
+# x =  3
+    
+#######################    
+# Solving in other ways
+from sympy import *
+
+var('x y') 
+
+# First equation set equal to zero, ready to solve
+first = 2*x - y
+
+# Sympy syntax for equation equal to zero, ready to factor
+eq1 = Eq(first,0) 
+
+# Sympy solve for x
+sol = solve(eq1,x) 
+
+# Show factored results
+print("x = ", sol[0])
+
+# x = y/2 
+
+#################
+# Factoring
+import sympy 
+from sympy import * 
+
+var('x y') 
+
+# Equation set equal to zero, ready to solve
+#eq = x**2-4
+eq = x**3 - 2*x**2 - 5*x + 6 
+
+sympy.factor(eq)
+# (x-3)(x-1)(x+2)
+
+#############################
+# Can't do string to fraction
+print(3/4) # 0.75
+
+frac = float(input("fraction = "))
+print(frac)
+
