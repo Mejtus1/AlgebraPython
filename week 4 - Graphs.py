@@ -123,3 +123,63 @@ for x in range(10):
     plt.plot([x],[y], 'ro')
 
 plt.show()
+
+# -----------------------------
+# array used inside plot
+# drawing lines in graphs 
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+xmin = -10
+xmax = 10
+ymin = -10
+ymax = 10
+points = 2*(xmax-xmin)                   # - we define points as 2*(xmax-xmin), so if we chagne our window everything will chagne accordingly
+x = np.linspace(xmin, xmax, points)      # xmin = where do we start 
+                                         # points = how many points do I have 
+                                         # xmax = where do we end
+# np = numpy, linspace = function for linear graphing from numpy                                          # xmax = where do we end 
+                                         
+fig, ax = plt.subplots()
+plt.axis([xmin,xmax,ymin,ymax]) # window size
+plt.plot([xmin,xmax],[0,0],'b') # blue x axis
+plt.plot([0,0],[ymin,ymax], 'b') # blue y axis
+
+y = 2*x +1
+plt.plot(x,y, 'pink') # x, y here represent array, x is defined in linespace function, y therefore becomes array too 
+                      # r = red 
+plt.show()
+
+# -----------------------------
+# - line names, graph names, values 
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+xmin = -10
+xmax = 10
+ymin = -10
+ymax = 10
+points = 2*(xmax-xmin)
+x = np.linspace(xmin, xmax, points)
+
+fig, ax = plt.subplots()
+plt.axis([xmin,xmax,ymin,ymax]) # window size
+plt.plot([xmin,xmax],[0,0],'b') # blue x axis
+plt.plot([0,0],[ymin,ymax], 'b') # blue y axis
+
+ax.set_xlabel("x values")  # - creates x values name for graph label
+ax.set_ylabel("y values")  # - creates y values name for graph label 
+ax.set_title("Some Graph") # - name of graph 
+ax.grid(True)              # - shows grid lines on graph 
+
+ax.set_xticks(np.arange(xmin, xmax, 1)) # - changes and draws tickmarks on graph for x line in range 1
+ax.set_yticks(np.arange(ymin, ymax, 1)) # - changes and draws tickmarks on graph for y line in range 1
+
+y = 2*x +1
+plt.plot(x,y, label='y=2x+1')           # - plot line of submitted label 
+plt.plot([4],[6], 'ro', label='point')  # - plot point in submitted position 
+plt.plot(x,3*x, label='steeper line')   # - plot another line (we can input y value directly
+plt.legend() # - shows labels           # - (x,3*x) 3*x = y value, which represents x*3 
+plt.show()
