@@ -13,8 +13,8 @@
 # 2 - 1    1
 
 # Formula 
-#     y2 - y1
-# M = -------
+#     y2 - y1    
+# M = -------         
 #     x2 - x1 
 
 # M = slope because it means how much ve MOVE on the graph 
